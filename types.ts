@@ -1,0 +1,42 @@
+export enum CellState {
+  HOMEOSTASIS = 'HOMEOSTASIS',
+  EARLY_ONCOGENIC = 'EARLY_ONCOGENIC',
+  PRE_MALIGNANT_PLASTICITY = 'PRE_MALIGNANT_PLASTICITY',
+  AGGRESSIVE_SUBCLONE = 'AGGRESSIVE_SUBCLONE',
+  NEURONAL_INSTABILITY = 'NEURONAL_INSTABILITY',
+  PROTEOTOXIC_STRESS = 'PROTEOTOXIC_STRESS',
+  SYNAPTIC_BREAKDOWN = 'SYNAPTIC_BREAKDOWN',
+  MITO_FAILURE = 'MITO_FAILURE',
+  REDOX_IMBALANCE = 'REDOX_IMBALANCE',
+  MITO_RESILIENCE_DROP = 'MITO_RESILIENCE_DROP',
+  ABERRANT_ACTIVATION = 'ABERRANT_ACTIVATION',
+  TOLERANCE_SIGNAL_FAIL = 'TOLERANCE_SIGNAL_FAIL',
+  HYPER_REACTIVE_FLUX = 'HYPER_REACTIVE_FLUX',
+  SENESCENT_DRIFT = 'SENESCENT_DRIFT',
+  METABOLIC_DRIFT = 'METABOLIC_DRIFT',
+  STRESS_INTOLERANCE = 'STRESS_INTOLERANCE',
+  IDIOPATHIC_DYSFUNCTION = 'IDIOPATHIC_DYSFUNCTION',
+  FATE_INSTABILITY = 'FATE_INSTABILITY',
+  DIFFERENTIATION_DRIFT = 'DIFFERENTIATION_DRIFT'
+}
+
+export interface AdvancedMetrics {
+  temperature: number;
+  ph: number;
+  atp: number;
+  ros: number;
+  ca2: number;
+  membranePotential: number;
+  mutationRisk: number;
+  glucoseUptake: number;
+  proteinMisfolding: number;
+  cytosolicViscosity: number;
+  mitochondrialFractal: number;
+}
+
+export interface SignalData {
+  time: string;
+  amplitude: number;
+  noise: number;
+  frequency: number;
+}

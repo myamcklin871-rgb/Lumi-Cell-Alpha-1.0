@@ -1,0 +1,7 @@
+{
+  "name": "LumiCell - Alpha V1",
+  "description": "A high-fidelity biological digital twin for the LumiCell research tool, designed for the TSA Engineering Design competition. It provides real-time phenotypic monitoring and structural pathology detection.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
