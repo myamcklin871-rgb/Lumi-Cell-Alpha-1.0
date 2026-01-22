@@ -3,34 +3,43 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LumiCell Core | Advanced Bio-Diagnostic Suite</title>
+    <title>LumiCell | High-Resolution Phenotypic Diagnostic Core</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; background-color: #01030d; color: #f8fafc; overflow-x: hidden; }
-        .clinical-glass { 
-            background: rgba(8, 15, 30, 0.6); 
-            backdrop-filter: blur(30px); 
-            border: 1px solid rgba(255, 255, 255, 0.06); 
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        :root {
+            --cyan-glow: rgba(34, 211, 238, 0.4);
+            --rose-glow: rgba(244, 63, 94, 0.4);
+            --amber-glow: rgba(251, 191, 36, 0.4);
+            --purple-glow: rgba(168, 85, 247, 0.4);
         }
+        body { margin: 0; background-color: #01030d; color: #f8fafc; overflow: hidden; font-family: 'Inter', sans-serif; height: 100vh; width: 100vw; }
         .outfit { font-family: 'Outfit', sans-serif; }
         .mono { font-family: 'JetBrains Mono', monospace; }
-        
-        @keyframes scanline { 0% { transform: translateY(-100%); } 100% { transform: translateY(100%); } }
-        .scanline { animation: scanline 12s linear infinite; background: linear-gradient(to bottom, transparent, rgba(34, 211, 238, 0.1), transparent); }
-        
-        @keyframes pulse-slow { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.6; } }
-        .animate-pulse-slow { animation: pulse-slow 4s ease-in-out infinite; }
-        
-        @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        .animate-spin-slow { animation: spin-slow 20s linear infinite; }
 
-        ::-webkit-scrollbar { width: 4px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+        .clinical-glass { 
+            background: rgba(10, 18, 35, 0.7); 
+            backdrop-filter: blur(20px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.4);
+        }
+
+        @keyframes scanline { 0% { transform: translateY(-100%); } 100% { transform: translateY(100%); } }
+        .scanline { animation: scanline 12s linear infinite; background: linear-gradient(to bottom, transparent, rgba(34, 211, 238, 0.05), transparent); }
+        
+        @keyframes drift { 0% { background-position: 0% 0%; } 100% { background-position: 100% 100%; } }
+        .bg-grid-drift { background-image: radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 50px 50px; animation: drift 100s linear infinite; }
+
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.2); }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+        #root { height: 100%; width: 100%; }
     </style>
 <script type="importmap">
 {
@@ -38,14 +47,13 @@
     "react/": "https://esm.sh/react@^19.2.3/",
     "react": "https://esm.sh/react@^19.2.3",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react-dom": "https://esm.sh/@google/@^1.37.0",
     "recharts": "https://esm.sh/recharts@^3.6.0",
     "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
   }
 }
 </script>
 </head>
-<body>
+<body class="bg-grid-drift">
     <div id="root"></div>
     <script type="module" src="index.tsx"></script>
 </body>
